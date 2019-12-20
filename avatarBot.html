@@ -35,7 +35,7 @@
 </head>
 
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" onload="wakeUpCall();">
 
 	<div class="ftco-blocks-cover-1">
 		<div class="site-section-cover overlay" style="background-image: url('images/hero_1.jpg')">
@@ -82,5 +82,18 @@
 </script>
 
 </body>
+
+<script language="javascript">
+    function wakeUpCall() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://dashbotconnector.herokuapp.com/ping", true);
+      xhr.send(null);
+
+	  var xhr2 = new XMLHttpRequest();	
+      xhr2.open("GET", "https://avatarbotwebhook.herokuapp.com/avatarbot/ping", true);
+      xhr2.send(null);
+
+    }
+  </script>
 
 </html>
