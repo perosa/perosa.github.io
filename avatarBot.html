@@ -85,14 +85,14 @@
 
 <script language="javascript">
     function wakeUpCall() {
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://dashbotconnector.herokuapp.com/ping", true);
-      xhr.send(null);
-
 	  var xhr2 = new XMLHttpRequest();	
       xhr2.open("GET", "https://avatarbotwebhook.herokuapp.com/avatarbot/ping", true);
       xhr2.send(null);
 	  
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://dashbotconnector.herokuapp.com/ping", true);
+      xhr.send(null);
+
 	  var xhr3 = new XMLHttpRequest();	
       xhr3.open("GET", "https://botmetricsconnector.herokuapp.com/ping", true);
       xhr3.send(null);
