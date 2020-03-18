@@ -1,0 +1,21 @@
+.header {
+  background-color: #E5DF8E !important;
+}
+.launcher {
+  background-color: #F6F5E9 !important;
+}
+.conversation-container .client {
+  background-color: #E5DF8E !important;
+}
+.full-screen .close-button, .conversation-container .toggle-fullscreen-button {
+  background-color: #E5DF8E !important;
+}
+.conversation-container .title {
+  color: #ffffff !important;
+}
+
+
+div.markdown *
+{
+    color: #424D74 !important;
+}
