@@ -56,7 +56,17 @@
 			
 			 <div id="webchat"></div>
     <script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
+	
+	<script type="text/javascript">
+        function delayInit() {
+
+            setTimeout(init, 5000);
+        }
+        window.onload = delayInit;
+    </script>
+		
     <script>
+	function init() {
       WebChat.default.init({
         selector: "#webchat",
         initPayload: "/session_start",
@@ -74,6 +84,7 @@
         openLauncherImage: "images/coronavirus.png",
         embedded: false // true for full screen
       });
+	}
     </script>
 
 			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
