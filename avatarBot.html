@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="css/aos.css"/>
 
 	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="css/style-avatarbot.css"/>
+	<link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -68,34 +68,65 @@
 
 </div>
 
+<div id="webchat"></div>
 
-
+<script src="https://storage.googleapis.com/mrbot-cdn/webchat-v0.7.23.js"></script>
 <script type="text/javascript">
-	/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
-	(function(d, m){
-	var kommunicateSettings = {"appId":"3da9e4390379a06b15125b6e76bd99393","popupWidget":true,"automaticChatOpenOnNavigation":true};
-	var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-	s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-	var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-	window.kommunicate = m; m._globals = kommunicateSettings;
-	})(document, window.kommunicate || {});
-</script>
+        function codeAddress() {
+
+            setTimeout(init, 1000);
+        }
+        window.onload = codeAddress;
+        </script>
+
 
 </body>
+
+<script>
+function init() {
+
+WebChat.default.init({
+selector: "#webchat",
+initPayload: "/session_start",
+inputTextFieldHint: "Say Hi",
+customData: { language: "en" },
+socketUrl: "https://rasa-avatarbot.herokuapp.com/",
+socketPath: "/socket.io/",
+storage: "session",
+profileAvatar: "avatarBot.png",
+title: "Avatar Chatbot",
+subtitle: "Find an Avatar",
+displayUnreadCount: true,
+showFullScreenButton: true,
+showMessageDate: true,
+openLauncherImage: "avatarBot.png",
+embedded: false // true for full screen
+});
+}
+
+</script>
 
 <script language="javascript">
     function wakeUpCall() {
 	  var xhr2 = new XMLHttpRequest();	
-      xhr2.open("GET", "https://avatarbotwebhook.herokuapp.com/avatarbot/ping", true);
+      xhr2.open("GET", "https://rasa-avatarbot.herokuapp.com/", true);
       xhr2.send(null);
 	  
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", "https://dashbotconnector.herokuapp.com/ping", true);
-      xhr.send(null);
+	  xhr2 = new XMLHttpRequest();	
+      xhr2.open("GET", "https://rasasdk-avatarbot.herokuapp.com/", true);
+      xhr2.send(null);
+	  
+	  xhr2 = new XMLHttpRequest();	
+      xhr2.open("GET", "https://rasaimg-avatarbot.herokuapp.com/ping", true);
+      xhr2.send(null);
+	  
+//      var xhr = new XMLHttpRequest();
+//      xhr.open("GET", "https://dashbotconnector.herokuapp.com/ping", true);
+//      xhr.send(null);
 
-	  var xhr3 = new XMLHttpRequest();	
-      xhr3.open("GET", "https://botmetricsconnector.herokuapp.com/ping", true);
-      xhr3.send(null);
+//	  var xhr3 = new XMLHttpRequest();	
+//     xhr3.open("GET", "https://botmetricsconnector.herokuapp.com/ping", true);
+//      xhr3.send(null);
 	  
 
     }
