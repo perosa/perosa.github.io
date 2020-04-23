@@ -103,6 +103,19 @@ showMessageDate: true,
 openLauncherImage: "avatarBot.png",
 embedded: false // true for full screen
 });
+	
+	 
+      var xhr1 = new XMLHttpRequest();	
+      xhr1.open("GET", "https://rasa-avatarbot.herokuapp.com/", true);
+      xhr1.send(null);
+	  
+      var xhr2 = new XMLHttpRequest();	
+      xhr2.open("GET", "https://rasasdk-avatarbot.herokuapp.com/", true);
+      xhr2.send(null);
+	  
+      var xhr3 = new XMLHttpRequest();	
+      xhr3.open("GET", "https://rasaimg-avatarbot.herokuapp.com/ping", true);
+      xhr3.send(null);
 }
 
 </script>
